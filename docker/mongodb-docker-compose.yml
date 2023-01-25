@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  mongo-express:
+    image: mongo-express
+    ports:
+      - "8085:8082"
+    environment:
+      ME_CONFIG_BASIC-AUTH_USERNAME: root
+      ME_CONFIG_BASIC-AUTH_PASSWORD: root
+      ME_CONFIG_MONGODB_PORT: 27017
+      ME_CONFIG_MONGODB_ADMIN USERNAME: root
+      ME_CONFIG_MONGODB_ADMIN-PASSWORD: root
+    links:
+      - mongo
+    networks:
+      - mongo-compose-network
+    restart: always
+
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITRD_ROOT_USERNAME: root
+      MONGO_INITRD_ROOT_PASSWORD: root
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./data/db
+    networks:
+      - mongo-compose-network
+    restart: always
+
+networks:
+  mongo-compose-network:
+    driver: bridge
