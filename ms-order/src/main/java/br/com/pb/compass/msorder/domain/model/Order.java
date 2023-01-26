@@ -6,6 +6,7 @@ import org.hibernate.validator.constraints.br.CPF;
 
 import java.math.BigDecimal;
 import java.util.List;
+
 @Builder
 @Entity
 @Data
@@ -26,7 +27,6 @@ public class Order {
     private List<Item> items;
     @Column(name = "total")
     private BigDecimal amount;
-
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "address_id")
     private Address address;

@@ -4,12 +4,16 @@ import br.com.pb.compass.msorder.domain.model.Address;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.br.CPF;
 
 import java.util.List;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class OrderRequest {
     @NotBlank
     @Pattern(regexp = "^\\d{11}$", message = "deve ter apenas 11 numeros")
@@ -31,7 +35,7 @@ public class OrderRequest {
     @JsonProperty("endereco")
     private Address address;
 
-    public void setAddress() {
-    }
+
+
 }
 

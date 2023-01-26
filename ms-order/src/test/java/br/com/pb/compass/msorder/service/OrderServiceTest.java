@@ -1,7 +1,8 @@
 package br.com.pb.compass.msorder.service;
 
-import br.com.pb.compass.msorder.repository.OrderRepository;
-import br.com.pb.compass.msorder.util.MappersUtils;
+import br.com.pb.compass.msorder.application.service.OrderService;
+import br.com.pb.compass.msorder.framework.adapter.out.database.OrderRepository;
+import br.com.pb.compass.msorder.framework.helper.util.MappersUtils;
 import org.junit.jupiter.api.Test;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -11,7 +11,6 @@ public class HistoryDTO   {
     private Long idOrder;
     private String sku;
     private BigDecimal total;
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private LocalDate date;
 
 }

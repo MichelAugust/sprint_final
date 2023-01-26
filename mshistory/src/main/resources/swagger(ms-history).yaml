@@ -1,0 +1,50 @@
+openapi: 3.0.1
+info:
+  title: MS History
+  description: Microserviço de gerenciamento de historico
+  version: 1.0.0
+servers:
+  - url: http://localhost:8082/api/history
+paths:
+  /history:
+    get:
+      tags:
+        - History
+      operationId: getAllDate
+      parameters:
+        - name: inicio
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date
+        - name: fim
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/HistoryDTO'
+components:
+  schemas:
+    HistoryDTO:
+      type: object
+      properties:
+        idOrder:
+          type: integer
+          format: int64
+        sku:
+          type: string
+        total:
+          type: number
+        date:
+          type: string
+          format: date

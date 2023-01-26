@@ -1,7 +1,8 @@
 package br.com.pb.compass.msorder.rest;
 
 import br.com.pb.compass.msorder.domain.dto.OrderDTO;
-import br.com.pb.compass.msorder.service.OrderService;
+import br.com.pb.compass.msorder.framework.adapter.in.rest.OrderController;
+import br.com.pb.compass.msorder.application.service.OrderService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -17,8 +18,6 @@ import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;

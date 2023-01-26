@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 public class AddressDTO{
     private String cep;
+    private String numero;
     private String logradouro;
     private String complemento;
     private String bairro;

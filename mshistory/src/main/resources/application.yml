@@ -11,9 +11,24 @@ spring:
     name: ms-history
     main:
       allow-bean-definition-overriding: true
+
   data:
     mongodb:
       uri: mongodb://localhost:27017/db_history
+
+  kafka:
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: group_id
+      bootstrap-servers: localhost:9092
+      auto-offset-reset: earliest
+      topic:
+        shop-cliente: topic_shop_cliente
+
+
+
+
 
 springdoc:
   api-docs:
