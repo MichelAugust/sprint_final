@@ -1,0 +1,11 @@
+
+u
+java:S1128"XRemove this unused import 'br.com.pb.compass.msorder.domain.dto.request.AddressRequest'.(¤ó¦Ü8Ò…­·Ş0
+m
+java:S1128"KRemove this unused import 'br.com.pb.compass.msorder.domain.model.Address'.(À‹Ç‘ÿÿÿÿÿ8Îòƒ›ß0
+g
+java:S1128"JRemove this unused import 'com.fasterxml.jackson.annotation.JsonProperty'.(ËÃ§Ï8ü—ÒÖŞ0
+\
+java:S1128":Remove this unused import 'jakarta.persistence.ManyToOne'.(áîÖãùÿÿÿÿ8Æ²ÑÖŞ0
+[
+java:S1128"9Remove this unused import 'jakarta.persistence.OneToOne'.(Ç­É™üÿÿÿÿ8©ÑÖŞ0
