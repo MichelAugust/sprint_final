@@ -15,5 +15,5 @@ public class OrderDTO {
     private String cpf;
     private List<ItemDTO> items;
     private Double amount;
-    private Address address;
+    private AddressDTO addressDTO;
 }

@@ -1,11 +1,11 @@
 package br.com.pb.compass.msorder.application.service;
 
-import br.com.pb.compass.msorder.domain.dto.AddressDTO;
 import br.com.pb.compass.msorder.domain.dto.OrderDTO;
 import br.com.pb.compass.msorder.domain.dto.request.OrderRequest;
 import br.com.pb.compass.msorder.domain.model.Address;
 import br.com.pb.compass.msorder.domain.model.Order;
 import br.com.pb.compass.msorder.framework.adapter.out.database.OrderRepository;
+import br.com.pb.compass.msorder.framework.adapter.out.event.TopicProducer;
 import br.com.pb.compass.msorder.framework.helper.util.MappersUtils;
 import br.com.pb.compass.msorder.framework.helper.viacep.ViaCepClient;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.lang.reflect.Type;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -27,19 +28,20 @@ public class OrderService {
     private final OrderRepository repository;
     private final ModelMapper mapper;
     private final MappersUtils mappersUtils;
-
     private final ViaCepClient viaCepClient;
+
+    private final TopicProducer producer;
 
 
     public OrderDTO saveNewOrder(OrderRequest orderRequest) {
         Order entity = mappersUtils.orderRequestToEntity(orderRequest);
-        String cep = orderRequest.getAddress().getCep().replaceAll("[^0-9]", "");
-        orderRequest.getAddress().setCep(cep);
-        AddressDTO address = viaCepClient.findByCep((cep));
-
-
+        String cep = orderRequest.getAddressRequest().getCep().replaceAll("[^0-9]", "");
+        entity.getAddress().setCep(cep);
+        Address address = viaCepClient.findByCep((cep));
         Order saved = repository.save(entity);
-        return mapper.map(saved, OrderDTO.class, String.valueOf(address));
+        OrderDTO orderDTO = new OrderDTO();
+        producer.send(orderDTO);
+        return mapper.map(saved, (Type) Order.class, String.valueOf(address));
     }
 
     public List<OrderDTO> getAll(String sort) {

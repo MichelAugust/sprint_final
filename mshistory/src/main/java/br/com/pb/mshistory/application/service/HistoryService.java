@@ -36,6 +36,17 @@ public class HistoryService {
         }
     }
 
+    public void create(History history) {
+        repository.save(history);
+    }
+
+    public void saveNewhistory(HistoryDTO historyRequest) {
+        History history = new History();
+        history.setIdOrder(historyRequest.getIdOrder());
+        history.setDate(LocalDate.now());
+        create(history);
+
+    }
 }
 
 

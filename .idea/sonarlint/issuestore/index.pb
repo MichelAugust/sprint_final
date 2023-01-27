@@ -11,23 +11,25 @@ Mms-order/src/test/java/br/com/pb/compass/msorder/rest/ItemControllerTest.java,
 Kms-order/src/test/java/br/com/pb/compass/msorder/util/MappersUtilsTest.java,5\5\5522859bd4f1822404cac1ff1a4e65fd18a59ab8
 ~
 Nms-order/src/test/java/br/com/pb/compass/msorder/service/OrderServiceTest.java,9\0\90cdf8b7868a63a37307139eddd51570d146fbe0
-O
-docker/kafka-docker-compose.yml,0\e\0e21a602e0420b1740f37dd23edcc57ef2764adf
 Q
 !docker/mongodb-docker-compose.yml,f\f\ffc171c4f725aee65e665ab40100d54c86d237ca
-B
-docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
-u
-Emshistory/src/main/java/br/com/pb/mshistory/MshistoryApplication.java,d\1\d1be3233dc344a2cd398a5e7342fd2909cdfb038
 w
 Gms-order/src/main/java/br/com/pb/compass/msorder/domain/model/Item.java,e\7\e7c72f39b7ae774dc42e1de27faa6187f20b29f4
 x
 Hms-order/src/main/java/br/com/pb/compass/msorder/domain/dto/ItemDTO.java,3\9\399250a2296e1a93f5bc3beea2bafef8c38e5245
-á
-Wms-order/src/main/java/br/com/pb/compass/msorder/domain/dto/request/AddressRequest.java,a\e\aeb64a90c1947c33c8c98b27ec30a592c402199e
 A
 mshistory/pom.xml,a\7\a739f5cf0c2488eb17fb8babd9ca25202306bf11
-u
-Emshistory/src/main/java/br/com/pb/mshistory/domain/model/History.java,0\c\0c239954f10ab171566f59ec77337fd53176a5ce
-x
-Hms-order/src/main/java/br/com/pb/compass/msorder/domain/model/Order.java,1\d\1db430bdba8f15292e941c7b5cc2acb63d0fcada
+ä
+Zms-order/src/main/java/br/com/pb/compass/msorder/framework/helper/config/MapperConfig.java,e\2\e239804b30dedc8a385f3d9176277bb3b3b3cf21
+î
+dms-order/src/main/java/br/com/pb/compass/msorder/framework/adapter/out/database/OrderRepository.java,d\c\dc3eb093e5c44dab08e940df6a3884043e9050b5
+{
+Kms-order/src/main/java/br/com/pb/compass/msorder/domain/dto/AddressDTO.java,e\4\e415d634f952780a83f878db19fc3062750d5cda
+Ñ
+Tms-order/src/main/java/br/com/pb/compass/msorder/domain/dto/request/ItemRequest.java,8\1\81d8a354f1c44bcf5bb3bc5ae3fd5ee359886767
+ê
+`ms-order/src/main/java/br/com/pb/compass/msorder/framework/exception/GlobalExpectionHandler.java,6\e\6ee31c8b8bb1f559ff89eb0c6424aa5e8bec5da2
+O
+docker/kafka-docker-compose.yml,0\e\0e21a602e0420b1740f37dd23edcc57ef2764adf
+@
+ms-order/pom.xml,8\5\8520729f0142fa7ef5ea133a7156ca13d4b479a5

@@ -1,6 +1,5 @@
 package br.com.pb.compass.msorder.domain.dto.request;
 
-import br.com.pb.compass.msorder.domain.model.Address;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.*;
@@ -16,7 +15,6 @@ import java.util.List;
 @NoArgsConstructor
 public class OrderRequest {
     @NotBlank
-    @Pattern(regexp = "^\\d{11}$", message = "deve ter apenas 11 numeros")
     @JsonProperty("cpf")
     @CPF
     private String cpf;
@@ -33,7 +31,7 @@ public class OrderRequest {
 
     @NotNull
     @JsonProperty("endereco")
-    private Address address;
+    private AddressRequest addressRequest;
 
 
 

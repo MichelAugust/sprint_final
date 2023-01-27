@@ -7,8 +7,8 @@ import org.springframework.kafka.annotation.EnableKafka;
 
 
 @SpringBootApplication
-@EnableKafka
 @EnableFeignClients
+@EnableKafka
 public class MsOrderApplication {
 
     public static void main(String[] args) {
