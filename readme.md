@@ -11,7 +11,8 @@ Projeto com Java e Spring Boot para enviar pedidos utilizando mensageria com kaf
 - Maven 4.0
 - Java 17
 - Ide(Intellij)
-- 
+- Docker
+
 
 
 ## Criando o jar
@@ -31,7 +32,7 @@ Projeto com Java e Spring Boot para enviar pedidos utilizando mensageria com kaf
 
 - **Item:** Id, Nome, Data de Criação, Data de Validade, Valor, Descricao.  
 
-- **Endereco:** id, rua, numero, bairro, cidade, estdo, cep.
+- **Endereco:** id, rua, numero, bairro, cidade, estado, cep.
 
 
 ## Endpoints:
@@ -85,35 +86,32 @@ Projeto com Java e Spring Boot para enviar pedidos utilizando mensageria com kaf
 Recebe o id do pedido e o seu total, por meio de uma fila gerada quando um novo pedido é salvo na API Pedido. Os dados recebidos são salvos em uma tabela do BD mongo, com um código único gerado automaticamente e a data do momento do evento. Foi utilizado o Kafka. Ele se comunica com o order_db.
 
 ~~~
-
+curl --location --request GET 'http://localhost:8082/api/history'
 
 ~~~
 
 Efetua o pedido, monta as informações e envia a requisição para o serviço de pedidos (/api/pedido) e retorna as informações do pedido:
 
 ~~~
-[
-    
-    {
-        "id": 6,
-        "cpf": "00033344455",
-        "items": [
-            {
-                "id": 15,
-                "name": "string",
-                "creationDate": "27/01/2023 12:41:00",
-                "expirationDate": "28/01/2023 12:41:00",
-                "value": 50.00,
-                "description": "string"
-            }
-        ],
-        "amount": 1.0,
-        "address": 
-        {
-        "cep": "4849846541"
-        "numero": "625"
-        }
-    },
+curl --location --request POST 'http://localhost:8080/api/pedidos' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "id": 0,
+  "cpf": "00022233312",
+  "items": [
+    {      
+      "nome": "test",      
+      "data_de_validade": "",
+      "valor": 100.00,
+      "descricao": "test"
+    }
+  ],
+  "total": 1,
+  "address": {
+      "cep": "81320000",
+      "number": "608"            
+  }
+}
 ~~~
 
 
