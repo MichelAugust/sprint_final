@@ -13,8 +13,6 @@ Kms-order/src/test/java/br/com/pb/compass/msorder/util/MappersUtilsTest.java,5\
 Nms-order/src/test/java/br/com/pb/compass/msorder/service/OrderServiceTest.java,9\0\90cdf8b7868a63a37307139eddd51570d146fbe0
 Q
 !docker/mongodb-docker-compose.yml,f\f\ffc171c4f725aee65e665ab40100d54c86d237ca
-w
-Gms-order/src/main/java/br/com/pb/compass/msorder/domain/model/Item.java,e\7\e7c72f39b7ae774dc42e1de27faa6187f20b29f4
 x
 Hms-order/src/main/java/br/com/pb/compass/msorder/domain/dto/ItemDTO.java,3\9\399250a2296e1a93f5bc3beea2bafef8c38e5245
 Š
@@ -35,8 +33,6 @@ O
 Wms-order/src/main/java/br/com/pb/compass/msorder/domain/dto/response/OrderResponse.java,c\6\c60ae2c1f5a1a67c38709bda55f78cc24dca7fb6
 B
 docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
-z
-Jms-order/src/main/java/br/com/pb/compass/msorder/domain/model/Address.java,f\3\f34d19c1e2ccfdd49ec30cdbaeee869cb42fd70f
 x
 Hms-order/src/main/java/br/com/pb/compass/msorder/domain/model/Order.java,1\d\1db430bdba8f15292e941c7b5cc2acb63d0fcada
 y
